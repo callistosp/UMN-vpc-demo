@@ -1,5 +1,5 @@
 nm_version: ""
-overwrite: false
+overwrite: true
 clean_lvl: 1
 copy_lvl: 0
 git: true

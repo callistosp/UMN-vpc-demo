@@ -1,4 +1,4 @@
-Tue Aug 24 23:30:03 EDT 2021
+Tue Aug 24 23:41:46 EDT 2021
 $PROB base 
 ; Drug X; one compartment
 ; estimat
@@ -32,7 +32,8 @@ $OMEGA
 
 $SIGMA 0.01
 $COVR 
-$TAB ID TIME AMT DV MDV IPRED PRED CWRES NOPRINT  NOAPPEND ONEHEADER FILE=r2.tab 
+$TAB ID TIME AMT DV MDV IPRED PRED CWRES NPDE NOPRINT NOAPPEND ONEHEADER FILE=r2.tab 
+$TAB ID CL V ETAS(1:LAST) NOPRINT NOAPPEND FIRSTONLY ONEHEADER FILE=r2par.tab 
 
 NM-TRAN MESSAGES
   
@@ -65,7 +66,7 @@ Days until program expires : 325
 0LABELS FOR DATA ITEMS:
  ID TIME AMT DV MDV EVID
 0(NONBLANK) LABELS FOR PRED-DEFINED ITEMS:
- IPRED
+ CL V IPRED
 0FORMAT FOR DATA:
  (E3.0,2E4.0,E21.0,E2.0,1F2.0)
 
@@ -105,7 +106,7 @@ Days until program expires : 325
  PRECONDTIONING TYPE (PRETYPE):        0
  FORCED POS. DEFINITE SETTING: (FPOSDEF):0
 0TABLES STEP OMITTED:    NO
- NO. OF TABLES:           1
+ NO. OF TABLES:           2
  SEED NUMBER (SEED):    11456
  RANMETHOD:             3U
  MC SAMPLES (ESAMPLE):    300
@@ -121,7 +122,19 @@ Days until program expires : 325
  RFORMAT:
  FIXED_EFFECT_ETAS:
 0USER-CHOSEN ITEMS:
- ID TIME AMT DV MDV IPRED PRED CWRES
+ ID TIME AMT DV MDV IPRED PRED CWRES NPDE
+0-- TABLE   2 --
+0RECORDS ONLY:    FIRSTONLY
+04 COLUMNS APPENDED:    NO
+ PRINTED:                NO
+ HEADER:                YES
+ FILE TO BE FORWARDED:   NO
+ FORMAT:                S1PE11.4
+ LFORMAT:
+ RFORMAT:
+ FIXED_EFFECT_ETAS:
+0USER-CHOSEN ITEMS:
+ ID CL V ETA1 ETA2
 1DOUBLE PRECISION PREDPP VERSION 7.4.4
 
  ONE COMPARTMENT MODEL (ADVAN1)
@@ -281,9 +294,9 @@ Days until program expires : 325
  TOTAL EFFECTIVE ETAS (NIND*NETA):                           100
   
  #TERE:
- Elapsed estimation  time in seconds:     0.73
+ Elapsed estimation  time in seconds:     0.63
  Elapsed covariance  time in seconds:     0.23
- Elapsed postprocess time in seconds:     0.02
+ Elapsed postprocess time in seconds:     0.12
 1
  
  
@@ -534,6 +547,6 @@ Days until program expires : 325
 +        7.62E+01 -2.79E+02 -5.58E+03 .........  1.37E+05  2.83E+05
  
  Elapsed finaloutput time in seconds:     0.02
- #CPUT: Total CPU Time in Seconds,        0.907
+ #CPUT: Total CPU Time in Seconds,        1.016
 Stop Time:
-Tue Aug 24 23:30:14 EDT 2021
+Tue Aug 24 23:41:50 EDT 2021

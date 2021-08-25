@@ -5,7 +5,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://namespaces.oreilly.com/xmlnut/address output.xsd"
 xmlns:nm="http://namespaces.oreilly.com/xmlnut/address"
 >
-<nm:start_datetime>2021-08-24T23:30:13.226</nm:start_datetime>
+<nm:start_datetime>2021-08-24T23:41:49.718</nm:start_datetime>
 <nm:control_stream><![CDATA[
 $PROB base
 ; Drug X; one compartment
@@ -40,7 +40,8 @@ $OMEGA
 
 $SIGMA 0.01
 $COVR
-$TAB ID TIME AMT DV MDV IPRED PRED CWRES NOPRINT  NOAPPEND ONEHEADER FILE=r2.tab
+$TAB ID TIME AMT DV MDV IPRED PRED CWRES NPDE NOPRINT NOAPPEND ONEHEADER FILE=r2.tab
+$TAB ID CL V ETAS(1:LAST) NOPRINT NOAPPEND FIRSTONLY ONEHEADER FILE=r2par.tab
 ]]></nm:control_stream>
 <nm:nmtran><![CDATA[
 
@@ -93,7 +94,7 @@ Days until program expires : 325
 0LABELS FOR DATA ITEMS:
  ID TIME AMT DV MDV EVID
 0(NONBLANK) LABELS FOR PRED-DEFINED ITEMS:
- IPRED
+ CL V IPRED
 0FORMAT FOR DATA:
  (E3.0,2E4.0,E21.0,E2.0,1F2.0)
 
@@ -133,7 +134,7 @@ Days until program expires : 325
  PRECONDTIONING TYPE (PRETYPE):        0
  FORCED POS. DEFINITE SETTING: (FPOSDEF):0
 0TABLES STEP OMITTED:    NO
- NO. OF TABLES:           1
+ NO. OF TABLES:           2
  SEED NUMBER (SEED):    11456
  RANMETHOD:             3U
  MC SAMPLES (ESAMPLE):    300
@@ -149,7 +150,19 @@ Days until program expires : 325
  RFORMAT:
  FIXED_EFFECT_ETAS:
 0USER-CHOSEN ITEMS:
- ID TIME AMT DV MDV IPRED PRED CWRES
+ ID TIME AMT DV MDV IPRED PRED CWRES NPDE
+0-- TABLE   2 --
+0RECORDS ONLY:    FIRSTONLY
+04 COLUMNS APPENDED:    NO
+ PRINTED:                NO
+ HEADER:                YES
+ FILE TO BE FORWARDED:   NO
+ FORMAT:                S1PE11.4
+ LFORMAT:
+ RFORMAT:
+ FIXED_EFFECT_ETAS:
+0USER-CHOSEN ITEMS:
+ ID CL V ETA1 ETA2
 1DOUBLE PRECISION PREDPP VERSION 7.4.4
 
  ONE COMPARTMENT MODEL (ADVAN1)
@@ -193,9 +206,10 @@ Days until program expires : 325
  nm:cov_eigen_print='no' nm:cov_special='no' nm:cov_compressed='no' nm:cov_slow_gradient='noslow'
  nm:cov_siglocov='-1' nm:cov_siglcov='-1' nm:cov_tol='-1' nm:cov_atol='-1' nm:cov_nofcov='no' nm:cov_cholroff='no'
  nm:cov_knuthsumoff='-1' nm:cov_resume='no' nm:cov_sirsample='-1' nm:cov_thbnd='1' nm:cov_precond='0'
- nm:cov_preconds='tos' nm:cov_pfcond='0' nm:cov_pretype='0' nm:cov_fposdef='0' nm:tab_omitted='no' nm:tab_number='1'
+ nm:cov_preconds='tos' nm:cov_pfcond='0' nm:cov_pretype='0' nm:cov_fposdef='0' nm:tab_omitted='no' nm:tab_number='2'
  nm:tab_seed='11456' nm:tab_ranmethod='3u' nm:tab_esample='300' nm:tab_wres='eigenvalue'
- nm:tab_fixedetas_01='BLANK' nm:pred_advan='1' nm:pred_evid='6' nm:pred_time='2' nm:pred_amt='3'
+ nm:tab_fixedetas_01='BLANK' nm:tab_fixedetas_02='BLANK' nm:pred_advan='1' nm:pred_evid='6' nm:pred_time='2'
+ nm:pred_amt='3'
 />
 <nm:estimation nm:number='1' nm:type='0'>
 <nm:table_series>1</nm:table_series>
@@ -330,7 +344,7 @@ Days until program expires : 325
 <nm:col nm:cname='EPS1'>12.274391024089548</nm:col>
 </nm:row>
 </nm:epsshrinkvr>
-<nm:estimation_elapsed_time>0.73</nm:estimation_elapsed_time>
+<nm:estimation_elapsed_time>0.63</nm:estimation_elapsed_time>
 <nm:covariance_information><![CDATA[
 ]]></nm:covariance_information>
 <nm:covariance_status nm:error='0' nm:numnegeigenvalues='-1' nm:mineigenvalue='0.0000000000000000' nm:maxeigenvalue='0.0000000000000000' nm:rms='0.0000000000000000'/>
@@ -508,11 +522,11 @@ Days until program expires : 325
 </nm:invcovariance>
 </nm:estimation>
 <nm:post_process_times>
-<nm:post_elapsed_time>0.02</nm:post_elapsed_time>
+<nm:post_elapsed_time>0.12</nm:post_elapsed_time>
 <nm:finaloutput_elapsed_time>0.02</nm:finaloutput_elapsed_time>
 </nm:post_process_times>
 </nm:problem>
 </nm:nonmem>
-<nm:stop_datetime>2021-08-24T23:30:14.232</nm:stop_datetime>
-<nm:total_cputime>0.907</nm:total_cputime>
+<nm:stop_datetime>2021-08-24T23:41:50.734</nm:stop_datetime>
+<nm:total_cputime>1.016</nm:total_cputime>
 </nm:output>

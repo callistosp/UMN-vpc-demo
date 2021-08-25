@@ -29,5 +29,5 @@ MODEL_DIR <- here::here("model","nonmem")
 
 # mod <- new_model(file.path(MODEL_DIR, "r2"))
 mod <- read_model(file.path(MODEL_DIR, "r2"))
-submit_model(mod, .mode="local")
+submit_model(mod, .mode="local", .bbi_args = list(overwrite=TRUE))
 

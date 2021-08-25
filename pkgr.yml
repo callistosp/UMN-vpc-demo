@@ -12,6 +12,8 @@ Packages:
   - here
   - mrgsolve
   - diffobj
+  - mrggsave
+  - vpc
 
 Repos:
   - MPN: https://mpn.metworx.com/snapshots/stable/2021-07-23
