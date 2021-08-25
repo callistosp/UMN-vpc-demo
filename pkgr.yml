@@ -1,0 +1,23 @@
+Version: 1
+
+Packages:
+  - tidyverse
+  - bbr
+  - yspec
+  - pmtables
+  - pmplots
+  - lastdose
+  - bitops
+  - caTools
+  - here
+  - mrgsolve
+
+Repos:
+  - MPN: https://mpn.metworx.com/snapshots/stable/2021-07-23
+
+Customizations:
+  Packages:
+  - bbr: {Suggests: true}
+
+Lockfile:
+    Type: renv
