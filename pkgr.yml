@@ -11,6 +11,7 @@ Packages:
   - caTools
   - here
   - mrgsolve
+  - diffobj
 
 Repos:
   - MPN: https://mpn.metworx.com/snapshots/stable/2021-07-23
