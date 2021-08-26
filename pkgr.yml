@@ -14,6 +14,7 @@ Packages:
   - diffobj
   - mrggsave
   - vpc
+  - PKPDmisc
 
 Repos:
   - MPN: https://mpn.metworx.com/snapshots/stable/2021-07-23
